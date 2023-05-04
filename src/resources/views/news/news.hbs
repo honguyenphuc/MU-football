@@ -1,0 +1,31 @@
+<!-- main -->
+<div class="main">
+  <!--GALLARY-->
+  {{#each news}}
+    <section class="gallary">
+      <div class="gallary__img">
+        <a href="/news/{{this._id}}">
+        <div class="gallary_img_overload">
+          <img src={{this.headline_image}} alt="ManUtd" />
+          </div>
+          <div class="content">
+            <h1>{{this.title}}</h1>
+            <p>
+              {{this.description}}
+            </p>
+            <div class="id"><span
+              >{{this.createString}}|{{this.authorName}}</span></div>
+          </div>
+        </a>
+      </div>
+    </section>
+  {{/each}}
+</div>
+
+<div class="pagination-page">
+  <ul>
+    {{#each page}}
+      <a href="./?page={{this}}"><li>{{this}}</li></a>
+    {{/each}}
+  </ul>
+</div>

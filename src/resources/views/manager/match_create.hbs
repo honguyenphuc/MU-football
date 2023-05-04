@@ -1,0 +1,55 @@
+<div id="newss-create" >
+  <h1 class="text-center">ADD MATCH</h1>
+
+<form
+  id="match-create"
+  method="POST"
+  class="w-50 ml-auto mr-auto"
+  action="/manager/match-create"
+  enctype="multipart/form-data"
+>
+  <div class="form-outline mb-4 ">
+    <label class="form-label" for="competitor">Competitor</label>
+    <input type="text" id="competitor" class="form-control" name="competitor" required />
+  </div>
+  <div class="form-outline mb-4">
+    <label class="form-label" for="logo">Logo</label>
+    <input
+      type="file"
+      id="logo"
+      class="form-control"
+      name="logo"
+      accept=".jpg, .jpeg, .png"
+    />
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="time">Time</label>
+    <input
+      type="datetime-local"
+      id="time"
+      class="form-control"
+      name="time"
+      required
+    />
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="tournament">Tournament</label>
+    <input type='text' name="tournament" class="form-control" required ></input>
+  </div>
+
+  <div class="form-outline mb-4">
+    <input type='checkbox' name="home" value='home'></input>
+    <label for="home">Home</label>
+  </div>
+
+  <!-- Submit button -->
+  <button type="submit" class="btn buttonSubmit btn-block mb-4">Post</button>
+
+  <!-- Register buttons -->
+  <div class="text-center">
+    <p>Back <a href="./">Here</a></p>
+  </div>
+</form>
+</div>

@@ -1,0 +1,155 @@
+#player-detail {
+    padding: 0 15px;
+    margin: 0 -220px !important;
+    padding-top: 110px;
+}
+
+/* content */
+.pla-inf-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: #474747;
+    padding: 0;
+    /* position: fixed;pla-inf-bg_content
+    width: 100%; */
+}
+
+.player-shirt-number {
+    font-size: 200px;
+    font-family: 'Bebas Neue', cursive;
+    font-weight: 100;
+    /* color:rgb(159, 18, 18) ; */
+
+}
+
+.player-name {
+    font-size: 60px;
+    margin-left: 30px;
+    font-family: 'Bebas Neue', cursive;
+    font-weight: 150;
+}
+
+.buy-shirt {
+    color: white;
+    padding: 10px 50px;
+    font-size: 25px;
+    letter-spacing: 2px;
+    font-family: 'Bebas Neue', cursive;
+    text-transform: uppercase;
+    background-color: #474747;
+    margin: 20px;
+    border: 1px solid white;
+    transform: skew(-20deg);
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.buy-shirt:hover {
+    background-color: white;
+    color: black;
+}
+
+.player__info {
+    margin-top: 70px;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.player-info__main {
+    width: 100%;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    color: white;
+
+}
+
+
+.pla-inf-bg_content img {
+    width: 100%;
+    height: 100%;
+    margin-top: 40px;
+}
+
+.deatil-stats__stats {
+    width: 100%;
+    text-align: left;
+    text-transform: uppercase;
+    padding: 115px 100px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.age {
+    font-size: 30px;
+}
+
+.number {
+    font-size: 80px;
+}
+
+.deatil-stats__stats li {
+    margin-top: 10px;
+    list-style: none;
+    color: white;
+    /* font-family: 'Bebas Neue', cursive; */
+}
+
+.deatil-stats__stats img {
+    margin-top: 10px;
+    width: 100px;
+}
+
+/* profile */
+.profile {
+    font-family: 'Bebas Neue', cursive;
+}
+
+.profile__main {
+    position: relative;
+    margin: 20px 60px 40px;
+}
+
+.id1 {
+    text-align: left;
+    font-size: 60px;
+    text-transform: uppercase;
+}
+
+.bio-content {
+    font-size: 22px;
+}
+
+.bio-more {
+    position: absolute;
+    right: 0;
+}
+
+.profile__id {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    list-style: none;
+}
+
+/* id2 */
+.player-id {
+    font-size: 20px;
+    padding: 10px;
+
+}
+
+.player-id li {
+    font-size: 40px;
+    border-right: black solid 3px;
+}
+
+.player-id p {
+    color: red;
+    font-size: 22px;
+}
+
+/* .buy-shirt{
+    width: 0;
+} */

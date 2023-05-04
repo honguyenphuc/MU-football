@@ -1,0 +1,154 @@
+
+
+/* line */
+.line {
+    border-bottom: 4px solid rgb(159, 18, 18);
+}
+
+/* NAv */
+.navbar {
+    background-color: #101010;
+}
+
+.title a {
+    color: white;
+    text-decoration: none;
+    font-size: 50px;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+#navbarSupportedContent ul li {
+    text-decoration: none;
+    padding: 0 20px;
+    text-transform: uppercase;
+}
+
+#navbarDropdown {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.search-info {
+    width: 50%;
+    padding: 0 30px;
+}
+
+.search-info button {
+    color: #ffffff;
+}
+
+
+/* Main */
+
+.detail-item {
+    display: flex;
+    margin: 90px 0;
+}
+
+.detail-item-2 {
+    padding: 70px 20px;
+}
+
+.detail-item-2 h1 {
+    font-size: 50px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.item-min {
+    margin: 15px 10px;
+}
+.item-min img {
+    width: 100%;
+}
+
+
+
+.detail-img {
+    margin: 20px 10px;
+}
+
+
+.product-id img {
+    width: 100%;
+}
+
+
+.title span {
+    display: block;
+    text-transform: uppercase;
+}
+
+.title span:first-child {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.title span:last-child {
+    font-size: 30px;
+    color: rgb(159, 18, 18);
+}
+
+.title a {
+    display: inline-block;
+    font-size: 30px;
+    padding: 0;
+    text-decoration: none;
+    color: rgb(159, 18, 18);
+}
+
+.size {
+    margin-bottom: 20px;
+}
+
+.size span {
+    border: 2px solid #3f3f3f;
+    padding: 16px;
+}
+
+#size {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+#size span {
+    cursor: pointer;
+}
+
+.active {
+    background-color: #3f3f3fbc;
+    color: #ffffff;
+}
+
+.size p {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.sub-mit-paying {
+    font-size: 20px;
+    margin: 10px 20px 10px 0;
+    padding: 15px;
+    border: 2px solid black;
+    background-color: rgb(159, 18, 18);
+    color: white;
+}
+
+.sub-mit-paying a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.number input {
+    font-size: 32px;
+    padding: 0 8px;
+    border: 2px solid black;
+    width: 51%;
+    height: 50px;
+}
+
+.number p {
+    font-size: 20px;
+}

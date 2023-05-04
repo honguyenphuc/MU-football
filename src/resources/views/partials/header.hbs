@@ -1,0 +1,118 @@
+<header>
+    <div class="header">
+      <div class="logo_mu">
+        <a href="/news"><img
+            src="img/logo-manchester-united-4.png"
+            class="logo"
+            alt="logoMu"
+          /></a>
+      </div>
+    <div class="navbarr">
+      <ul>
+        <li class="nav_item user-nav">
+          <a data-hover="" href="/" class="nav-link">INTRODUCE</a>
+        </li>
+        <li class="nav_item user-nav">
+          <a data-hover="" href="/news" class="nav-link ">LATEST</a>
+        </li>
+        <li class="nav_item user-nav">
+          <a data-hover="" href="/competition" class="nav-link">FIXTURES</a>
+        </li>
+        <li class="nav_item user-nav">
+          <a data-hover="" href="/product" class="nav-link">PRODUCT</a>
+        </li>
+        <li class="nav_item user-nav">
+          <a data-hover="" href="/player" class="nav-link">TEAM</a>
+        </li>
+        <li class="nav_item user-nav">
+          <a data-hover="" href="/traditional" class="nav-link">Traditional room</a>
+        </li>
+
+        <li class="admin-nav hidden">
+          <a data-hover="" href="/manager/order" class="nav-link">Order</a>
+        </li>
+        <li class="admin-nav hidden">
+          <a data-hover="" href="/manager/news" class="nav-link ">Manager News</a>
+        </li>
+
+        <li class="admin-nav hidden">
+          <a data-hover="" href="/manager/match" class="nav-link ">Manager Fixture</a>
+        </li>
+
+        <li class="admin-nav hidden">
+          <a data-hover="" href="/manager/product" class="nav-link">Manager Product</a>
+        </li>
+        <li class="admin-nav hidden">
+          <a data-hover="" href="/manager/player" class="nav-link">Manager Player</a>
+        </li>
+        <li class="admin-nav hidden">
+          <a data-hover="" href="/manager/account" class="nav-link">Manager Account</a>
+        </li>
+
+        <li class=" js_login_item">
+          <a data-hover="" href="/account" class="nav-link login_btn">LOGIN</a>
+        </li>
+        <li class="hidden js_username_item">
+          <div class="icon">
+          <i class="fa-solid fa-user"></i>
+          <p id="username" style="text-transform: uppercase; font-weight:bold;"></p>
+          </div>
+          <div class="sub-user">
+            <ul>
+              <li id="manager-nav" data-admin={{admin}}></li>
+              <li class="user-nav"><a id="buy-history" href="/account/buy-history">Purchase history</a></li>
+              <li><a id="logout" href="/account/logout">LOGOUT</a></li>
+            </ul>
+          </div>
+        </li>
+        <li id="cart" class="hidden">
+            <a href="/product/cart" class="icon-cart">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+            <p class="icon-cart-number">{{cart.length}}</p>
+        </li>
+      </ul>
+    </div> 
+
+     
+    </div>
+
+    <!--Start of Fchat.vn-->
+    <script type="text/javascript" src="https://cdn.fchat.vn/assets/embed/webchat.js?id=6448a09ee3b24c1d706dc3c3"
+      async="async"></script><!--End of Fchat.vn-->
+
+
+    <script>
+   const navItems = document.querySelectorAll(".nav_item");
+
+    // Lấy giá trị đã lưu trong sessionStorage
+    let activeNavItemIndex = sessionStorage.getItem("activeNavItemIndex") || 0; // Nếu không có giá trị sẽ mặc định là 0
+
+    navItems.forEach((item, index) => {
+      item.addEventListener("click", () => {
+        // Xóa class 'nav-active' của tất cả các nút điều hướng
+        navItems.forEach((nav_item) => {
+          nav_item.classList.remove("nav-active");
+        });
+        // Thêm class 'nav-active' vào nút điều hướng đã được nhấp
+        item.classList.add("nav-active");
+
+        // Lưu giá trị của phần tử được chọn xuống sessionStorage
+        sessionStorage.setItem("activeNavItemIndex", index);
+      });
+
+      // Kiểm tra xem phần từ được chọn có phải là phần từ này không và add class 'nav-active'
+      if (activeNavItemIndex == index) {
+        item.classList.add("nav-active");
+      }
+    });
+
+    // Để xóa class 'nav-active' khi không có phần tử nào được click
+    document.addEventListener("DOMContentLoaded", () => {
+      if (!document.querySelector(".nav-active")) {
+        navItems[0].classList.add("nav-active");
+      }
+    });
+
+    </script>
+    </header>

@@ -1,0 +1,90 @@
+.marginContainer {
+  margin-top: 100px;
+}
+
+.marginRegister {
+  margin-top: 70px;
+}
+
+#competition {
+  margin-top: 50px;
+}
+
+.editContainer {
+  padding-top: 40px;
+}
+
+.col-four {
+  width: 24% !important;
+}
+
+@font-face {
+  font-family: bebas;
+  src: url('../font/Bebas_Neue/BebasNeue-Regular.ttf');
+}
+
+.hidden {
+  display: none !important;
+}
+
+.pagination-page {
+  margin: 20px auto;
+}
+
+.pagination-page ul {
+  font-size: 24px;
+  text-align: center;
+  line-height: 30px;
+}
+
+.pagination-page ul li {
+  width: 30px;
+  height: 30px;
+  list-style-type: none;
+  display: inline-block;
+}
+
+.pagination-page ul li:hover {
+  border: 2px solid #000;
+  border-radius: 5px;
+}
+
+/* Manager Page */
+
+.admin-title {
+  width: 100%;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: bebas;
+  padding-top: 100px;
+
+}
+
+.admin-title h1 {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 70px;
+}
+
+#manager-newss {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+
+
+.manager-newss {
+  width: 100%;
+  background-color: #343A40;
+  text-align: center;
+  padding: 20px 0;
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: bebas;
+
+}

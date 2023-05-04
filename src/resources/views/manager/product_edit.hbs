@@ -1,0 +1,105 @@
+<div class="editContainer">
+  <div class="marginContainer">
+  <h1 class="text-center">Product Edit</h1>
+  </div>
+
+<form
+  id="product-edit"
+  method="POST"
+  class="w-50 ml-auto mr-auto"
+  action="/manager/product/{{product._id}}?_method=PUT"
+  enctype="multipart/form-data"
+>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="name">Name</label>
+    <input
+      type="text"
+      value="{{product.name}}"
+      id="name"
+      class="form-control"
+      name="name"
+      required
+    />
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="productImages">Product Images</label>
+    <input
+      type="file"
+      value="{{product.productImages}}"
+      id="productImages"
+      class="form-control"
+      name="productImages"
+      accept=".jpg, .jpeg, .png"
+      multiple
+    />
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="description">Description</label>
+    <input
+      type="text"
+      value="{{product.description}}"
+      id="description"
+      class="form-control"
+      name="description"
+      required
+    />
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="type">Type</label>
+    <select id="type-product" data-type="{{product.type}}">
+        <option value="home">Home</option>
+        <option value="away">Away</option>
+        <option value="third">Third</option>
+        <option value="training">Training</option>
+        <option value="ticket">Ticket</option>
+    </select>
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="price">Price</label>
+    <input
+      type="text"
+      value="{{product.price}}"
+      id="price"
+      class="form-control"
+      name="price"
+      required
+    />
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="available">Available</label>
+    <input
+      type="text"
+      value="{{product.available}}"
+      id="available"
+      class="form-control"
+      name="available"
+      required
+    />
+  </div>
+
+  <!-- Submit button -->
+  <button type="submit" class="btn buttonSubmit btn-block mb-4">Update</button>
+
+  <!-- Register buttons -->
+  <div class="text-center">
+    <p>Back <a href="../../product">Here</a></p>
+  </div>
+</form>
+</div>
+
+<script>
+    let sectionType = document.querySelector("#type-product");
+    let valueOption = sectionType.getAttribute("data-type");
+    let optionElements = document.querySelectorAll("#type-product option");
+    for(let e of optionElements) {
+        if(e.value == valueOption) {
+            e.setAttribute("selected", true);
+        }
+    }
+</script>

@@ -1,0 +1,60 @@
+<form
+  id="login-form"
+  class="w-75 ml-auto mr-auto"
+  method="POST"
+  action="/account"
+>
+  <div class="logo__MU">
+    <img
+      src="./img/HD-wallpaper-manchester-united-fc-english-football-club-leather-texture-premier-league-mu-logo-emblem-newton-heath-manchester-england-united-kingdom-football.jpg"
+      alt="logo"
+    />
+  </div>
+  <div class="main_login">
+    <div class="Log-in">
+      <h1 class="text-center">Login</h1>
+    </div>
+    <!-- Email input -->
+    <div class="main__login2">
+      <div id="phone1" class="form-outline mb-4">
+        <!-- <label class="form-label" for="form2Example1">Email/Phone</label> -->
+        <input
+          type="email"
+          id="form2Example1"
+          class="form-control"
+          name="email"
+          placeholder="Email/Phone"
+        />
+      </div>
+
+      <!-- Password input -->
+      <div class="form-outline mb-4">
+        <!-- <label class="form-label" for="form2Example2">Password</label> -->
+        <input
+          type="password"
+          id="form2Example2"
+          class="form-control"
+          name="password"
+          placeholder="Pasword"
+        />
+      </div>
+
+      <div class="sb-mit">
+        <button
+          id="sb-mit"
+          type="submit"
+          class="btn btn-primary btn-block mb-4 js-login"
+        >
+          Sign-in
+        </button>
+      </div>
+      <!-- Register buttons -->
+      <div class="text-center">
+        <p>Not a member? <a href="./register">Register</a></p>
+      </div>
+    </div>
+  </div>
+</form>
+
+<script src="js/login.js"></script>
+<script type="text/javascript" src="/js/container.js"></script>

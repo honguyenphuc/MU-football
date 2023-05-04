@@ -1,0 +1,147 @@
+<div class="editContainer">
+  <div class="marginContainer">
+  <h1 class="text-center">Player Edit</h1>
+</div>
+
+<form
+  id="create-player"
+  method="POST"
+  class="w-50 ml-auto mr-auto"
+  action="/manager/{{player._id}}?_method=PUT"
+  enctype="multipart/form-data"
+>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="name">Name</label>
+    <input
+      type="text"
+      value="{{player.name}}"
+      id="name"
+      class="form-control"
+      name="name"
+      maxlength="30"
+      required
+    />
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="avatar">Avatar</label>
+    <input
+      type="file"
+      value="{{player.avatar}}"
+      id="avatar"
+      class="form-control"
+      name="avatar"
+      accept=".jpg, .jpeg, .png"
+    />
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="backgroundImage">Background</label>
+    <input
+      type="file"
+      value="{{player.backgroundImage}}"
+      id="backgroundImage"
+      class="form-control"
+      name="backgroundImage"
+      accept=".jpg, .jpeg, .png"
+    />
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="jersey_number">Jersey Number</label>
+    <input
+      type="number"
+      value="{{player.jersey_number}}"
+      id="jersey_number"
+      class="form-control"
+      name="jersey_number"
+      required
+    />
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="position">Position</label>
+    <select
+      class="form-control sel-position"
+      name="position"
+      id="{{player.position}}"
+    >
+      <option value="GK">GK</option>
+      <option value="DF">DF</option>
+      <option value="MF">MK</option>
+      <option value="FW">FW</option>
+    </select>
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="dob">Day of Birth</label>
+    <input
+      type="date"
+      value="{{player.dob}}"
+      id="dob"
+      class="form-control time-player"
+      name="dob"
+      required
+    />
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="quote">Quote</label>
+    <input
+      type="text"
+      value="{{player.quote}}"
+      id="quote"
+      class="form-control"
+      name="quote"
+      required
+    />
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="biography">Biography</label>
+    <input
+      type="text"
+      value="{{player.biography}}"
+      id="biography"
+      class="form-control"
+      name="biography"
+      required
+    />
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="country">Country</label>
+    <input
+      type="text"
+      value="{{player.country}}"
+      id="country"
+      class="form-control"
+      name="country"
+      required
+    />
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="joined">Joined</label>
+    <input
+      type="date"
+      value="{{player.joined}}"
+      id="joined"
+      class="form-control time-player"
+      name="joined"
+      required
+    />
+  </div>
+
+  <!-- Submit button -->
+  <button type="submit" class="btn buttonSubmit btn-block mb-4">Update</button>
+
+  <!-- Register buttons -->
+  <div class="text-center">
+    <p>Back <a href="../../player">Here</a></p>
+  </div>
+</form>
+</div>
+
+<script src="js/player_edit.js"></script>

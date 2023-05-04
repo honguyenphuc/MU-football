@@ -1,0 +1,187 @@
+
+<div id="product-page">
+    <nav class="navbar navbar-expand-lg line">
+        <div class="container-fluid">
+            <div class="title">
+                <h1><a class="navbar-brand" href="#">MU SHOP</a></h1>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!-- home -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Kit
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#home">Home</a></li>
+                            <li><a class="dropdown-item" href="#away">Away</a></li>
+                            <li><a class="dropdown-item" href="#third">Third</a></li>
+                            <li><a class="dropdown-item" href="#ticket">Ticket</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- dropdoww -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#training" id="navbarDropdown" aria-expanded="false">
+                            Training
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Carousel-->
+    <section class="main-product">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            {{!-- <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div> --}}
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./img/hang-mu.jpg" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/11038608.jpg" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/Talent_Factories_MU_(1).jpg" alt="">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- gallary -->
+    <div class="pro-gallary container">
+        <h1 id="home" class="line">HOME</h1>
+        <div class="home-main">
+            {{#each homeProduct}}
+                <div class="home-item">
+                <a href="./{{this._id}}">
+                    <img src={{this.productImage}} alt="">
+                    <h3>{{this.name}}</h3>
+                    <span>{{this.price}}$</span>
+                    <button class="btn-submit">
+                        BUY NOW
+                        <div class="item-overlay">
+                            BUY NOW
+                        </div>
+                    </button>
+                </a>
+            </div>
+            {{/each}}
+        </div>
+
+
+        <!-- AWAY -->
+        <h1 id="away" class="line">AWAY</h1>
+        <div class="home-main">
+            {{#each awayProduct}}
+                <div class="home-item">
+                <a href="./{{this._id}}">
+                    <img src={{this.productImage}} alt="">
+                    <h3>{{this.name}}</h3>
+                    <span>{{this.price}}$</span>
+                    <button class="btn-submit">
+                        BUY NOW
+                        <div class="item-overlay">
+                            BUY NOW
+                        </div>
+                    </button>
+                </a>
+            </div>
+            {{/each}}
+        </div>
+
+        <h1 id="third" class="line">THIRD</h1>
+        <div class="home-main">
+            {{#each thirdProduct}}
+                <div class="home-item">
+                <a href="./{{this._id}}">
+                    <img src={{this.productImage}} alt="">
+                    <h3>{{this.name}}</h3>
+                    <span>{{this.price}}$</span>
+                    <button class="btn-submit">
+                        BUY NOW
+                        <div class="item-overlay">
+                            BUY NOW
+                        </div>
+                    </button>
+                </a>
+            </div>
+            {{/each}}
+        </div>
+
+        <h1 id="training" class="line">TRAINING</h1>
+        <div class="home-main">
+            {{#each trainingProduct}}
+                <div class="home-item">
+                <a href="./{{this._id}}">
+                    <img src={{this.productImage}} alt="">
+                    <h3>{{this.name}}</h3>
+                    <span>{{this.price}}$</span>
+                    <button class="btn-submit">
+                        BUY NOW
+                        <div class="item-overlay">
+                            BUY NOW
+                        </div>
+                    </button>
+                </a>
+            </div>
+            {{/each}}
+        </div>
+
+        <h1 id="training" class="line">TICKET</h1>
+        <div class="home-main">
+            {{#each ticketProduct}}
+                <div class="home-item">
+                <a href="./{{this._id}}">
+                    <img src={{this.productImage}} alt="">
+                    <h3>{{this.name}}</h3>
+                    <span>{{this.price}}$</span>
+                    <button class="btn-submit">
+                        BUY NOW
+                        <div class="item-overlay">
+                            BUY NOW
+                        </div>
+                    </button>
+                </a>
+            </div>
+            {{/each}}
+        </div>
+</div>
+</div>
+<!-- boostrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+<script>
+    let container = document.querySelector("#product-page").parentElement;
+    container.classList.remove("container");
+</script>

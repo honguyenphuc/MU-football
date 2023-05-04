@@ -1,0 +1,86 @@
+<div class="man-title line">
+  <div >
+    <h1>Player Manager</h1>
+  </div>
+
+  <div>
+    <button class="man-button"><a href="../player-create">ADD PLAYER</a></button>
+  </div>
+</div>
+
+<div class="man-content">
+  <table class="man-table">
+    <thead>
+      <tr class="container-fluid">
+        <th></th>
+        <th class="col-0">Position</th>
+        <th class="col-6">Name</th>
+        <th class="col-2">Day of Birth</th>
+        <th class="col-2">Jersey Number</th>
+        <th class="col-3">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each players}}
+        <tr class="manager">
+          <td class="manager-td" ><input type="checkbox" /></td>
+          <td class="manager-td">{{this.position}}</td>
+          
+          <td class="left-align td-name">
+            <img src={{this.avatar}} />
+            {{this.name}}
+          </td>
+
+          <td class="manager-td">{{this.dob}}</td>
+          <td class="manager-td">{{this.jersey_number}}</td>
+          <td class="manager-td">
+            <button class="button-edit"><a href="{{this._id}}/edit"><i
+                  class="fa-sharp fa-solid fa-pen"
+                ></i></a></button>
+            <button class="button-edit"
+              data-id="{{this._id}}"
+              data-toggle="modal"
+              data-target="#confirmDelete"
+            >
+              <i class="fa-solid fa-trash"></i></button>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+
+<!-- Confirm delete button -->
+<div id="confirmDelete" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Xóa Cầu Thủ?</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Bạn có chắc muốn xóa thông tin cầu thủ này.</p>
+      </div>
+      <div class="modal-footer">
+        <button id="btn-del" type="button" class="btn btn-danger">OK</button>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-dismiss="modal"
+        >Hủy</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<form id="delete-player" method="POST"> </form>
+
+<!-- Xử lý modal xóa -->
+<script src="js/player_delete.js"></script>

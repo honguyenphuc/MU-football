@@ -1,0 +1,120 @@
+.header {
+    background-color: rgb(129, 12, 12);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+
+    /* padding-top: 20px; */
+}
+
+.line2 {
+    background-color: black;
+    height: 20px;
+    width: 100%;
+}
+
+
+.navbarr li {
+    display: inline-block;
+}
+
+.navbarr .nav-link {
+    text-decoration: none;
+    padding: 18px 10px;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-family: bebas;
+    font-weight: 500;
+    color: #fff;
+    font-size: 32px;
+}
+
+.nav-link:hover{
+    color: black;
+}
+
+.icon-cart i {
+    color: #fff;
+    margin-right: 0;
+}
+
+#cart {
+    margin-right: 20px;
+    position: relative;
+}
+
+.icon-cart-number {
+    border-radius: 10px;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    color: black;
+    background-color: #fff;
+
+}
+
+.logo_mu img {
+    width: 70px;
+    font-size: 1vw;
+    margin: 20px 40px;
+}
+
+.js_username_item {
+    position: relative;
+    padding: 8px;
+    color: #fff;
+    font-size: 18px;
+
+}
+
+.js_username_item:hover .sub-user {
+    display: block;
+}
+
+.sub-user {
+    display: none;
+    position: absolute;
+    top: 50px;
+    border-radius: 15%;
+    color: #000;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.sub-user li {
+    font-size: 40px;
+}
+
+.sub-user a {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.icon {
+    width: 150px;
+}
+
+.icon i,
+p {
+    display: inline-block;
+}
+
+/* .js_username_item i,
+.js_username_item p {
+    display: inline-block;
+    font-size: 20px;
+} */
+
+.nav-active {
+    border-bottom: 4px solid #fff;
+}

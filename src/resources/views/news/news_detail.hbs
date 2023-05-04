@@ -1,0 +1,27 @@
+<div class="news_detail">
+<div class="news-main-content">
+  <div class="news-main-tittle">
+    <h1>{{news.title}}</h1>
+  </div>
+  <div class="news-info">
+    <div class="news-author">
+      <i class="fa-solid fa-feather"></i>
+      <span>by {{news.authorName}}</span>
+    </div>
+    <div class="news-time-create">
+      <span>{{news.createdTime}}</span>
+    </div>
+  </div>
+  <img src={{news.headline_image}} alt="" />
+</div>
+<div class="news-body">
+  <div class="news-main-text">
+    <div class="news-description">
+      {{news.description}}
+    </div>
+    <div class="news-content">
+      {{{news.content}}}
+    </div>
+  </div>
+</div>
+</div>

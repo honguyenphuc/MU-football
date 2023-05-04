@@ -1,0 +1,98 @@
+
+<div class="man-title">
+  <div>
+    <h1>Fixtures Manager</h1>
+  </div>
+
+  <div>
+    <button><a href="../match-create">Add Match</a></button>
+  </div>
+</div>
+
+<div class="man-content">
+  <table class="man-table">
+    <thead>
+      <tr class="text-center">
+        <th>Logo</th>
+        <th>Competitor</th>
+        <th>Time</th>
+        <th>Tournament</th>
+        <th>Home</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each match}}
+        <tr class="product-id1">
+          <td><img src={{this.imageClub}} /></td>
+          <td>{{this.club}}</td>
+          <td>{{this.time}}</td>
+          <td>{{this.tournament}}</td>
+          <td >{{this.home}}</td>
+          <td class="col-2 text-center">
+            <button class="button-edit"><a href="./{{this._id}}/edit"><i
+                  class="fa-sharp fa-solid fa-pen "
+                ></i></a></button>
+            <button
+              data-id="{{this._id}}"
+              data-toggle="modal"
+              data-target="#confirmDeleteMatch"
+              class="button-edit"
+            >
+              <i class="fa-solid fa-trash"></i></button>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+
+<!-- Confirm delete button -->
+<div id="confirmDeleteMatch" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Delete Match?</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Bạn có chắc muốn xóa trận này.</p>
+      </div>
+      <div class="modal-footer">
+        <button id="btn-del-match" type="button" class="btn btn-danger">OK</button>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-dismiss="modal"
+        >Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<form id="delete-match" method="POST"> </form>
+
+<!-- Xử lý modal xóa -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    var matchId;
+    var btnDel = document.querySelector("#btn-del-match");
+    var formDelete = document.querySelector("#delete-match");
+    $("#confirmDeleteMatch").on("show.bs.modal", function (event) {
+      var button = $(event.relatedTarget);
+      matchId = button.data("id");
+    });
+    btnDel.onclick = function (event) {
+      formDelete.action = "/manager/match/" + matchId + "?_method=DELETE";
+      formDelete.submit();
+    };
+  });
+  
+</script>
+

@@ -1,0 +1,132 @@
+.footer {
+    float: left;
+    background-color: #2a2a2a;
+    width: 100%;
+    min-height: 132px;
+    text-align: center;
+    margin: 0;
+    clear: both;
+    position: relative;
+
+}
+
+.item {
+
+    padding-top: 50px;
+    padding-bottom: 70px;
+    margin-left: 550px;
+
+
+}
+
+.item ul {
+
+    list-style: none;
+
+}
+
+
+
+.item ul a li {
+    float: left;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #3f3f3f;
+    margin-left: 15px;
+
+}
+
+
+
+.item ul li img {
+
+    text-decoration: none;
+    margin-top: 10px;
+    max-width: 25px;
+    max-height: 25px;
+    object-fit: cover;
+
+
+}
+
+.item ul li:hover {
+    background: rgb(159, 18, 18);
+}
+
+.footer-menu-link {
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    text-align: left;
+    padding: 20px 100px;
+}
+
+.footer-menu-link ul li {
+    display: inline;
+    margin-left: 10px;
+}
+
+.footer-menu-link a {
+
+    color: white;
+    float: left;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+
+.footer-menu-link span {
+    float: right;
+    margin-right: 10px;
+    color: whitesmoke;
+    margin-bottom: 16px;
+}
+
+.sponsor {
+    width: 100%;
+    background-color: white;
+}
+
+.sponsor ul li {
+    display: inline;
+    text-decoration: none;
+}
+
+.sponsor ul li img {
+
+    margin-left: 30px;
+    margin-top: 30px;
+    object-fit: cover;
+
+}
+
+.sponsor-secondary {
+    margin-top: 0;
+}
+
+
+.secondary li img {
+    object-fit: cover;
+    margin-bottom: 80px;
+}
+
+.footer-describe {
+    display: grid;
+}
+
+
+.footer-describe ul li {
+    color: aliceblue;
+    display: block;
+    margin-left: 0;
+    padding-top: 10px;
+
+}
+
+.footer-describe-title {
+    margin-left: 10px;
+    display: inline-block;
+    padding: 20px 0;
+}

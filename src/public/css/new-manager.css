@@ -1,0 +1,127 @@
+/* NEWS */
+.man-title {
+    padding-top: 120px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.man-title h1 {
+    font-family: bebas;
+}
+
+.man-title button{
+    background-color: white;
+    margin-bottom: 10px;
+}
+
+.man-title a {
+    text-decoration: none;
+    font-family: bebas;
+    font-size: 20px;
+    color: black;
+}
+
+.man-table{
+    text-align: justify;
+}
+
+.man-table th{
+    text-align: center;
+    padding: 10px 20px;
+    text-transform: uppercase;  
+}
+tr{
+    border-bottom: 1px solid black;
+}
+
+.newss-title{
+    display: inline-flex;
+    padding: 0 20px;
+}
+
+.newss-description{
+    padding: 0 20px;
+
+}
+.button-edit{
+    border-radius: 10px;
+    background-color: #fff;
+
+}
+.button-edit i{
+    padding: 5px; 
+}
+
+
+/* NEWS_CREATE */
+#newss-create{
+    padding-top:120px ;
+
+}
+#newss-create h1{
+    background-color: #343A40;
+    color: #fff;
+    font-family: bebas;
+}
+
+.form-outline input,textarea{
+    width: 550px;
+}
+
+.form-outline label{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+/* ORDER */
+.order{
+    padding-top:60px ;
+}
+
+.confirmItem{
+    color: black;
+    font-weight: 500;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+
+
+/* PLAYER */
+.manager-player td{
+    text-align: justify;
+}
+
+.manager-td {
+    text-align: center;
+}
+
+/* PLAYER CREATE */
+.player-create{
+    padding-top: 120px;
+    
+}
+
+.player-create h1{
+    background-color: #343A40;
+    color: #fff;
+
+}
+.form-input-add-player{
+    display: grid;
+    place-content: center;
+}
+
+#position select{
+    width: 550px;
+}
+
+#biography textarea{
+    width: 550px;
+    height: 100px;
+}
+
+
+
+

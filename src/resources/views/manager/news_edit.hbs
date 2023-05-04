@@ -1,0 +1,75 @@
+<div class="editContainer">
+  <div class="marginContainer">
+  <h1 class="text-center">News Edit</h1>
+</div>
+
+<form
+  id="news-edit"
+  method="POST"
+  class="w-50 ml-auto mr-auto"
+  action="/manager/news/{{news._id}}?_method=PUT"
+  enctype="multipart/form-data"
+>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="title">Title</label>
+    <input
+      type="text"
+      value="{{news.title}}"
+      id="title"
+      class="form-control"
+      name="title"
+      required
+    />
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="headline_image">Headline Image</label>
+    <input
+      type="file"
+      value="{{news.headline_image}}"
+      id="headline_image"
+      class="form-control"
+      name="headline_image"
+      accept=".jpg, .jpeg, .png"
+    />
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="description">Description</label>
+    <input
+      type="text"
+      value="{{news.description}}"
+      id="description"
+      class="form-control"
+      name="description"
+      required
+    />
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="content">Content</label>
+    <textarea
+      class="content-edit"
+      name="content"
+      id="editor"
+      value={{{news.content}}}
+    ></textarea>
+  </div>
+
+  <!-- Submit button -->
+  <button type="submit" class="btn buttonSubmit btn-block mb-4">Update</button>
+
+  <!-- Register buttons -->
+  <div class="text-center">
+    <p>Trở lại trang trước <a href="../../news">Here</a></p>
+  </div>
+</form>
+</div>
+
+<script src="js/ckeditor5.js"></script>
+<script>
+  var textAreaElement = document.querySelector(".content-edit");
+  editor.setData(textAreaElement.value);
+</script>
+<script src="js/news_edit.js"></script>

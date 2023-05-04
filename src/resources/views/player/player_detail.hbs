@@ -1,0 +1,88 @@
+<div id="player-detail">
+  <!-- content -->
+    <section class="pla-inf-content">
+      <div class="player-info__main live">
+        <div class="player-shirt-number">{{player.jersey_number}}</div>
+        <div class="player-content">
+          <h1 class="player-name">
+            <span
+              >{{player.name}}</span
+            >
+          </h1>
+          <button class="buy-shirt">
+            buy shirt<i class="fa fa-long-arrow-alt-right"></i>
+          </button>
+          <hr />
+          <div class="player__info">
+            <p>
+              {{player.quote}}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pla-inf-bg_content">
+        <img src="{{player.backgroundImage}}" alt="bg-player" />
+      </div>
+      <div class="deatil-stats__stats">
+        <ul>
+          <li>
+            <div class="age">AGE</div>
+            <div class="number">{{age}}</div>
+          </li>
+          <li>
+            <div class="age">CLB</div>
+            <img
+              src="img/logo-manchester-united-4.png"
+              alt="logoMu"
+            />
+          </li>
+          <li>
+            <div class="age">POSITION</div>
+            <div class="number">{{player.position}}</div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!--Biography-->
+    <section class="biography">
+      <div class="profile__main">
+        <h2 class="id1">Biography</h2>
+        <hr />
+        <div class="bio-content">
+          <p>
+            {{{player.biography}}}
+          </p>
+          <div class="bio-content bio-more">
+            <h4>Read More</h2>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+    <!-- profile -->
+    <section class="profile">
+      <div class="profile__main">
+        <h2 class="id1">PROFILE</h2>
+        <hr />
+        <ul class="profile__id">
+          <div class="player-id">
+            <li>POSITION</li>
+            <p>{{fullPosition}}</p>
+            <li>JOINED</li>
+            <p>{{player.joined}}</p>
+          </div>
+          <div class="player-id">
+            <li>COUNTRY</li>
+            <p>{{player.country}}</p>
+            <li>UNITED DEBUT</li>
+            <p>7 Aug 2011</p>
+          </div>
+          <div class="player-id">
+            <li>DATE OF BIRTH</li>
+            <p>{{player.dob}}</p>
+          </div>
+        </ul>
+      </div>
+    </section>
+</div>

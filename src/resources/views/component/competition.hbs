@@ -1,0 +1,88 @@
+ <div class="editContainer">
+    <div id="competition">
+        <div class="content-main">
+            <h2 class="match">MATCH</h2>
+        </div>
+
+
+        <div class="box-match">
+            <h3 id="realtime"></h3>
+
+            {{#each match}}
+            <div class="box1">
+                <span>{{this.date}} | {{this.tournament}}</span>
+            </div>
+
+
+            <div class="box2">
+                <ul>
+                    <li class="fisrt-team">
+                        <span>{{this.clubHome}}</span>
+                        <span><img class="img-fluid" src={{this.imageClubHome}}></span>
+                    </li>
+                    <li class="fixtures-score">
+                        <span class="time">{{this.time}}</span>
+                    </li>
+                    <li class="second-team">
+                        <span><img src={{this.imageClubAway}}></span>
+                        <span>{{this.clubAway}}</span>
+                    </li>
+                </ul>
+                <span class="ticker"><a href="/product/#ticket">Ticket Info</a></span>
+            </div>
+            {{/each}}
+        </div>
+        <div class='box-match'>
+            <h3>{{message}}</h3>
+        </div>
+    </div>
+<hr>
+ </div>
+
+<script>
+    const date = new Date();
+
+    const year = date.getFullYear();
+    let month = date.getMonth() + 1;
+
+    switch(month) {
+        case 1:
+            month = 'Jan';
+            break;
+        case 2:
+            month = 'Feb';
+            break;
+        case 3:
+            month = 'Mar';
+            break;
+        case 4:
+            month = 'Apr';
+            break;
+        case 5:
+            month = 'May';
+            break;
+        case 6:
+            month = 'Jun';
+            break;
+        case 7:
+            month = 'Jul';
+            break;
+        case 8:
+            month = 'Aug';
+            break;
+        case 9:
+            month = 'Sep';
+            break;
+        case 10:
+            month = 'Oct';
+            break;
+        case 11:
+            month = 'Nov';
+            break;
+        default : month = 'Dec';
+    }
+    console.log(month);
+
+    let monthElement = document.querySelector("#realtime");
+    monthElement.innerHTML = `${month} ${year}`;
+</script>

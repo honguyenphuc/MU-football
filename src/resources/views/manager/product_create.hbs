@@ -1,0 +1,70 @@
+<div class="editContainer">
+  <div class="marginContainer">
+  <h1 class="text-center">Add Product</h1>
+</div>
+
+<form
+  id="create-product"
+  method="POST"
+  class="w-50 ml-auto mr-auto"
+  action="/manager/product-create"
+  enctype="multipart/form-data"
+>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="name">Name</label>
+    <input
+      type="text"
+      id="name"
+      class="form-control"
+      name="name"
+      required
+    />
+  </div>
+  <div class="form-outline mb-4">
+    <label class="form-label" for="productImage">Product Image</label>
+    <input type="file" id="productImage" class="form-control" name="productImage" accept=".jpg, .jpeg, .png" multiple/>
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="description">Description</label>
+    <input
+      type="text"
+      id="description"
+      class="form-control"
+      name="description"
+      required
+    />
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="type">Type</Pabel>
+    <select name="type" id="type">
+        <option value="home">Home</option>
+        <option value="away">Away</Aption>
+        <option value="third">Third</Tption>
+        <option value="training">Training</option>
+        <option value="ticket">Ticket</option>
+    </select>
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="price">Price</label>
+    <input type="number" id="price" class="form-control" name="price" min="1" value="1" />
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="available">Available</label>
+    <input type="number" id="available" class="form-control" name="available" min="1" value="1" />
+  </div>
+
+  <!-- Submit button -->
+  <button type="submit" class="btn btn-block mb-4 buttonSubmit">SUBMIT</button>
+
+  <!-- Register buttons -->
+  <div class="text-center">
+    <p>Back <a href="./">Here</a></p>
+  </div>
+</form>
+</div>
+

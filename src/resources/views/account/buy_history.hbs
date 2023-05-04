@@ -1,0 +1,133 @@
+<div class="container">
+        <div class="line bill">
+            <h2>HISTORY</h2>
+        </div>
+        <table class="table">
+            <thead>
+                <tr class="title">
+                    <th scope="col">Describe</th>
+                    <th scope="col">Name-Product</th>
+                    <th scope="col">Size</th>
+                    <!-- <th scope="col">Price</th> -->
+                    <th scope="col">Number</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each productFirst}}
+                <tr class="history-buy-now">
+                    <th scope="row"><img src={{this.image}}></th>
+                    <td>{{this.name}}</td>
+                    <td>{{this.size}}</td>
+                    <td>{{this.quantity}}</td>
+                    <td>{{this.total}}$</td>
+                    <td>{{this.createTime}}</td>
+                    <td class="status" data-status={{this.status}}></td>
+                    <td>
+                        <button data-quantity={{this.quantity}} data-idcart={{this.idCart}} data-size={{this.size}} data-id={{this.id}} data-toggle="modal" data-target="#confirmCancelProduct" class="button-edit">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </td>
+                </tr>
+                {{/each}}
+                {{#each productSecond}}
+                <tr class="history-buy-now">
+                    <th scope="row"><img src={{this.image}}></th>
+                    <td>{{this.name}}</td>
+                    <td>{{this.size}}</td>
+                    <td>{{this.quantity}}</td>
+                    <td>{{this.total}}$</td>
+                    <td>{{this.createTime}}</td>
+                    <td class="status" data-status={{this.status}}></td>
+                </tr>
+                {{/each}}
+                {{#each productLast}}
+                <tr class="history-buy-now">
+                    <th scope="row"><img src={{this.image}}></th>
+                    <td>{{this.name}}</td>
+                    <td>{{this.size}}</td>
+                    <td>{{this.quantity}}</td>
+                    <td>{{this.total}}$</td>
+                    <td>{{this.createTime}}</td>
+                    <td class="status" data-status={{this.status}}></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        <h3>{{message}}</h3>
+</div>
+
+<div id="confirmCancelProduct" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cancel Product?</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Bạn có chắc muốn hủy đơn hàng này.</p>
+      </div>
+      <div class="modal-footer">
+        <button id="btn-cancel" type="button" class="btn btn-danger">OK</button>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-dismiss="modal"
+        >Hủy</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<form id="cancel-product" method="POST"></form>
+
+<script>
+    const statusElements = document.querySelectorAll('.status');
+    for(let element of statusElements) {
+        let status = element.getAttribute('data-status');
+        if(status == 0) {
+            element.innerHTML = 'Chờ xác nhận <i class="fa-solid fa-clock"></i>'
+        }
+        else if(status == 1) {
+            element.innerHTML = 'Đang vận chuyển <i class="fa-solid fa-truck-fast"></i>'
+        }
+        else if(status == 2){
+            element.innerHTML = 'Hoàn tất <i class="fa fa-check-square"></i>'
+        }
+        else {
+            element.innerHTML = 'Bị huỷ<i class="fa-solid fa-ban"></i>'
+        }
+    }
+
+    //Cancel Product
+
+    document.addEventListener("DOMContentLoaded", function () {
+    var productId;
+    var productSize;
+    var idCart;
+    var btnCancel = document.querySelector("#btn-cancel");
+    var formCancel = document.querySelector("#cancel-product");
+    $("#confirmCancelProduct").on("show.bs.modal", function (event) {
+        var button = $(event.relatedTarget);
+        productId = button.data("id");
+        productSize = button.data('size');
+        idCart = button.data('idcart');
+        quantity = button.data('quantity');
+    });
+    btnCancel.onclick = function (event) {
+        formCancel.action = `/account/buy-history/${productId}?_method=DELETE&size=${productSize}&idCart=${idCart}&quantity=${quantity}`;
+        formCancel.submit();
+    };
+    });
+
+</script>

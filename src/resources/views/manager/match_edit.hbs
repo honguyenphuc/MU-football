@@ -1,0 +1,86 @@
+<div class="editContainer">
+  <div class="marginContainer">
+  <h1 class="text-center">Match Edit</h1>
+</div>
+
+<form
+  id="edit-match"
+  method="POST"
+  class="w-50 ml-auto mr-auto"
+  action="/manager/match/{{match._id}}?_method=PUT"
+  enctype="multipart/form-data"
+>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="competitor">Competitor</label>
+    <input
+      type="text"
+      value="{{match.club}}"
+      id="competitor"
+      class="form-control"
+      competitor="competitor"
+      required
+    />
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="logo">Logo</label>
+    <input
+      type="file"
+      value="{{match.imageClub}}"
+      id="logo"
+      class="form-control"
+      name="logo"
+      accept=".jpg, .jpeg, .png"
+    />
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="time">Time</label>
+    <input
+      type="datetime-local"
+      value="{{match.time}}"
+      id="time"
+      class="form-control"
+      name="time"
+      required
+    />
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="tournament">Tournament</label>
+    <input
+      type="text"
+      value="{{match.tournament}}"
+      id="tournament"
+      class="form-control"
+      name="tournament"
+      required
+    />
+  </div>
+
+    <input
+      type="checkbox"
+      id="home"
+      name="home"
+      value="home"
+      data-value={{match.home}}
+    />
+    <label class="form-label" for="home">Home</label>
+
+  <!-- Submit button -->
+  <button type="submit" class="btn buttonSubmit btn-block mb-4">Update</button>
+
+  <!-- Register buttons -->
+  <div class="text-center">
+    <p>Back <a href="../../match">Here</a></p>
+  </div>
+</form>
+</div>
+
+<script>
+  homeCheck = document.querySelector("#home");
+  if(homeCheck.getAttribute('data-value') === 'true') {
+    homeCheck.setAttribute("checked", true);
+  }
+</script>

@@ -1,0 +1,161 @@
+<div class="order">
+        <div class="line bill">
+            <h2>Orders waiting for confirmation</h2>
+        </div>
+        <table class="table">
+            <thead>
+                <tr class="title">
+                    <th scope="col">Describe</th>
+                    <th scope="col">Name-Product</th>
+                    <th scope="col">Size</th>
+                    <!-- <th scope="col">Price</th> -->
+                    <th scope="col">Number</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Customer</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each cart}}
+                <tr>
+                    <th scope="row"><img src={{this.image}}></th>
+                    <td>{{this.name}}</td>
+                    <td>{{this.size}}</td>
+                    <td>{{this.quantity}}</td>
+                    <td>{{this.total}}$</td>
+                    <td>{{this.createTime}}</td>
+                    <td>{{this.productCustomer}}</td>
+                    <td>
+                        <button class="confirmItem" data-idCart={{this.idCart}} data-size={{this.size}} data-pid={{this.id}} data-cid={{this.productCustomerId}}>
+                           <span>Submit<i class="fa-solid fa-clock"></i></span> 
+                        </button>
+                    </td>
+                    <td>
+                        <button data-quantity={{this.quantity}} data-idcart={{this.idCart}} data-size={{this.size}} data-pid={{this.id}} data-toggle="modal" data-target="#cancelProduct">
+                           <span>Cancel</span> <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        <h3>{{message}}</h3>
+        </div>
+
+        <div class="line bill">
+            <h2>All Order</h2>
+        </div>
+        <table class="table">
+            <thead>
+                <tr class="title">
+                    <th scope="col">Describe</th>
+                    <th scope="col">Name-Product</th>
+                    <th scope="col">Size</th>
+                    <!-- <th scope="col">Price</th> -->
+                    <th scope="col">Number</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Customer</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each allCart}}
+                <tr>
+                    <th scope="row"><img src={{this.image}}></th>
+                    <td>{{this.name}}</td>
+                    <td>{{this.size}}</td>
+                    <td>{{this.quantity}}</td>
+                    <td>{{this.total}}$</td>
+                    <td>{{this.createTime}}</td>
+                    <td>{{this.productCustomer}}</td>
+                    <td class="allCartStatus" data-status={{this.status}}>
+                        
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        </div>
+
+
+<div id="cancelProduct" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cancel Product?</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Bạn có chắc muốn hủy đơn hàng này.</p>
+      </div>
+      <div class="modal-footer">
+        <button id="btn-cancel" type="button" class="btn btn-danger">OK</button>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-dismiss="modal"
+        >Hủy</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<form id="cancel-product" method="POST"></form>
+<form method="POST" id="orderConfirm"></form>
+
+<script>
+        const formConfirm = document.querySelector("#orderConfirm");
+        const submitBtns = document.querySelectorAll('.confirmItem');
+        for(let btn of submitBtns) {
+            btn.onclick = function() {
+                let proId = btn.getAttribute('data-pid');
+                let cusId = btn.getAttribute('data-cid');
+                let size = btn.getAttribute('data-size');
+                let idCart = btn.getAttribute('data-idCart');
+                formConfirm.action = "/manager/order/confirm?pid=" + proId + "&cid=" + cusId + "&size=" + size + "&idCart=" + idCart;
+                formConfirm.submit();
+            }
+        }   
+
+    //Cancel Product
+    document.addEventListener("DOMContentLoaded", function () {
+    var productId;
+    var productSize;
+    var idCart;
+    var quantity;
+    var btnCancel = document.querySelector("#btn-cancel");
+    var formCancel = document.querySelector("#cancel-product");
+    $("#cancelProduct").on("show.bs.modal", function (event) {
+        var button = $(event.relatedTarget);
+        productId = button.data("pid");
+        productSize = button.data('size');
+        idCart = button.data('idcart');
+        quantity = button.data('quantity');
+    });
+    btnCancel.onclick = function (event) {
+        formCancel.action = `/manager/order/${productId}?_method=DELETE&size=${productSize}&idCart=${idCart}&quantity=${quantity}`;
+        formCancel.submit();
+    };
+    });
+
+    //Set trang thai don hang
+    let tdStatus = document.querySelectorAll('.allCartStatus');
+    for(let td of tdStatus) {
+        if(td.getAttribute('data-status') == 3) {
+            td.innerHTML = `<span>Canceled</span><i class="fa-solid fa-xmark"></i>`
+        }
+        else {
+            td.innerHTML = `<span>Submited</span><i class="fa-sharp fa-solid fa-check"></i>`
+        }
+    }
+     
+</script>

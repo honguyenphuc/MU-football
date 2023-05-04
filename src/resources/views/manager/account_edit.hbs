@@ -1,0 +1,63 @@
+<div class="editContainer">
+  <div class="marginContainer">
+  <h1 class="text-center">Account Edit</h1>
+  </div>
+
+<form
+  id="account-edit"
+  method="POST"
+  class="w-50 ml-auto mr-auto"
+  action="/manager/account/{{account._id}}?_method=PUT"
+>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="name">Name</label>
+    <input
+      type="text"
+      value="{{account.name}}"
+      id="name"
+      class="form-control"
+      name="name"
+      disabled
+    />
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="email">Email</label>
+    <input
+      type="email"
+      value="{{account.email}}"
+      id="email"
+      class="form-control"
+      name="email"
+      disabled
+    />
+  </div>
+
+    <div>
+    <input
+      type="checkbox"
+      value="admin"
+      data-admin={{account.admin}}
+      id="role"
+      name="admin"
+    />
+    <label class="form-label" for="admin">Role</label>
+  </div>
+  
+  <!-- Submit button -->
+  <button type="submit" class="btn buttonSubmit btn-block mb-4">Update</button>
+
+  <!-- Register buttons -->
+  <div class="text-center">
+    <p>Back <a href="../../account">Here</a></p>
+  </div>
+</form>
+</div>
+
+<script>
+    let roleElement = document.querySelector("#role");
+    if(roleElement.getAttribute('data-admin') == 'true' ) {
+        roleElement.checked = true;
+    }
+</script>

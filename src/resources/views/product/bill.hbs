@@ -1,0 +1,30 @@
+<form method="POST" action="../../account/buy-history">
+        <div class="line bill">
+            <h2>BILL</h2>
+        </div>
+        <table class="table">
+            <thead>
+                <tr class="title">
+                    <th scope="col">Describe</th>
+                    <th scope="col">Name-Product</th>
+                    <th scope="col">Size</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each cart}}
+                <tr class="cart-img">
+                    <th scope="row"><img src={{this.image}} alt="áo tay dài "></th>
+                    <td>{{this.name}}</td>
+                    <td>{{this.size}}</td>
+                    <td>{{this.price}}$</td>
+                    <td>{{this.quantity}}</td>
+                    <td>{{this.total}}$</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+       <button class="btn print" type="submit">Order confirmation</button>
+    </form>

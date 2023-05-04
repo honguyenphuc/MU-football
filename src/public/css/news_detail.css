@@ -1,0 +1,48 @@
+.news-main-content {
+    position: relative;
+    margin-top: 120px;
+    
+}
+
+.news_detail{
+    padding: 40px;
+}
+
+.news-info {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.news-author i,
+.news-author span {
+    display: inline-block;
+}
+
+.news-time-create {
+    text-align: right;
+}
+
+.news-main-content img {
+    margin-top: 20px;
+    width: 100%;
+    object-fit: contain;
+}
+
+.news-main-tittle {
+    margin-top: 20px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 40px;
+}
+
+.news-description {
+
+    margin-top: 20px;
+    font-size: 24px;
+    font-style: italic;
+}
+
+
+.news-content img {
+    width: 100%;
+}
