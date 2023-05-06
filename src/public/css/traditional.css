@@ -1,25 +1,32 @@
 .room {
     position: relative;
-    z-index: 1;
-
 }
-
+.room-backround-img{
+    position: relative;
+}
 .room-backround-img img {
     width: 100%;
-    object-fit: contain;
-    height: 100%;
+    object-fit: contain ;
+    height: 650px;
     /* opacity: .9; */
-    background-image: linear-gradient(to right bottom, black);
+}
+.room-backround-overload{
+    position: absolute;
+    width: 100%;
+    height: 600px;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.933),transparent);
 }
 
 .room-title h1 {
     width: 100%;
-    position: absolute;
-    color: #ffffff;
+    /* position: absolute; */
+    color: black;
     bottom: 0px;
     padding-left: 40px;
     font-family: 'Bebas Neue', cursive;
-    z-index: 2;
+    /* z-index: 2; */
     font-size: 80px;
     text-transform: uppercase;
     font-weight: 600;
@@ -86,7 +93,6 @@
 }
 
 .cup {
-    background-color: rgba(0, 0, 0, 0, 9);
     padding: 60px 0;
     background-image: url('https://assets.manutd.com/AssetPicker/images/0/0/10/79/675693/639670961JP237_Manchester_U71545400955470_xlarge.jpg');
 }
